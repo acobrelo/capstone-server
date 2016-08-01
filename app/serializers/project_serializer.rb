@@ -1,3 +1,3 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :
+  attributes :id, :name, :genre, :description, :completed, :started_on, :target_finish, :inProgress
 end
