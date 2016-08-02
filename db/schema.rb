@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160802010108) do
     t.string   "location"
     t.string   "aliases",    default: [],              array: true
     t.text     "biography"
+    t.string   "username"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "user_id"

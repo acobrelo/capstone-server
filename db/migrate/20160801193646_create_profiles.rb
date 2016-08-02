@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :location
       t.string :aliases, array: true, default: []
       t.text :biography
+      t.string :username
 
       t.timestamps null: false
     end

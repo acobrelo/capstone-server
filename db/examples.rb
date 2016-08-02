@@ -16,4 +16,12 @@
 #                password: 'abc123',
 #                password_confirmation: nil)
 # end
-User.create(email: 'a', password: 'a', password_confirmation: 'a')
+user = User.create(email: 'a', password: 'a', password_confirmation: 'a')
+
+Profile.create(
+location: 'Boston',
+username: 'Baby Bat',
+biography: 'I am a very cool performer',
+user_id: user.id,
+aliases: ["Arielle", "Mercielle"]
+)
