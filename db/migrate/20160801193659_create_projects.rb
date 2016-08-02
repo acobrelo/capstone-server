@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.string :genre
-      t.text :description
+      t.string :description
       t.boolean :completed, default: false
       t.date :started_on
       t.date :target_finish

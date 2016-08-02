@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160802010108) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "genre"
-    t.text     "description"
+    t.string   "description"
     t.boolean  "completed",     default: false
     t.date     "started_on"
     t.date     "target_finish"
