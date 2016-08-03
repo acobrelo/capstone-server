@@ -18,10 +18,10 @@
 # end
 user = User.create(email: 'a', password: 'a', password_confirmation: 'a')
 
-Profile.create(
-location: 'Boston',
-username: 'Arielle',
-biography: 'I am a very cool performer',
-aliases: ["Arielle", "ARIELLE"],
-user: user
-)
+# Profile.create(
+# location: 'Boston',
+# username: 'Arielle',
+# biography: 'I am a very cool performer',
+# aliases: ["Arielle", "ARIELLE"],
+# user: user
+# )
