@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+    #@projects = current_user.projects
     @projects = Project.all
 
     render json: @projects
@@ -54,6 +55,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :genre, :description, :started_on, :target_finish)
+      params.require(:project).permit(:name, :genre, :description, :started_on, :target_finish, :profile_id)
     end
 end

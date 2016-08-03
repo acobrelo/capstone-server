@@ -20,8 +20,8 @@ user = User.create(email: 'a', password: 'a', password_confirmation: 'a')
 
 Profile.create(
 location: 'Boston',
-username: 'Baby Bat',
+username: 'Arielle',
 biography: 'I am a very cool performer',
-user_id: user.id,
-aliases: ["Arielle", "Mercielle"]
+aliases: ["Arielle", "ARIELLE"],
+user: user
 )

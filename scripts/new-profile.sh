@@ -6,3 +6,5 @@ curl --include --request POST http://localhost:3000/profiles \
       "biography": "no"
     }
   }'
+
+  curl --include --request GET http://localhost:3000/profiles/1 \

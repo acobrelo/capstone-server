@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
+    #@profiles = @current_user.profiles
+
     @profiles = Profile.all
 
     render json: @profiles
@@ -20,6 +22,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    #@profile = @current_user.build_profile(profile_params)
 
     if @profile.save
       render json: @profile, status: :created, location: @profile
@@ -52,9 +55,10 @@ class ProfilesController < ApplicationController
 
     def set_profile
       @profile = Profile.find(params[:id])
+      #@profile = current_user.profiles.find(params[:id])
     end
 
     def profile_params
-      params.require(:profile).permit(:location, :biography, :aliases, :user_id, :username)
+      params.require(:profile).permit(:location, :biography, :aliases, :username, :user_id)
     end
 end
