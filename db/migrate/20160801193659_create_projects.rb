@@ -7,7 +7,6 @@ class CreateProjects < ActiveRecord::Migration
       t.boolean :completed, default: false
       t.date :started_on
       t.date :target_finish
-      t.boolean :inProgress, default: true
 
       t.timestamps null: false
     end
