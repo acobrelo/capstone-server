@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803205353) do
+ActiveRecord::Schema.define(version: 20160803233314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20160803205353) do
   end
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.string   "content"
+    t.boolean  "done",        default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "notebook_id"
+  end
+
+  add_index "items", ["notebook_id"], name: "index_items_on_notebook_id", using: :btree
 
   create_table "notebooks", force: :cascade do |t|
     t.string   "name",       default: "Notebook"
@@ -79,6 +89,7 @@ ActiveRecord::Schema.define(version: 20160803205353) do
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
   add_foreign_key "examples", "users"
+  add_foreign_key "items", "notebooks"
   add_foreign_key "notebooks", "projects"
   add_foreign_key "profiles", "users"
   add_foreign_key "projects", "profiles"
